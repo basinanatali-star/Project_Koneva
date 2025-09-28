@@ -33,7 +33,7 @@ def mask_account_card(account_card: str) -> str:
         return f"{parts[0]} {masked_number}"
 
 
-def get_date(old_format: str) -> str:
+def get_date (old_format: str) -> str:
     """Функция, которая принимает на вход строку с датой в формате "2024-03-11T02:26:18.671407"
     и возвращает строку с датой в формате "ДД.ММ.ГГГГ" ("11.03.2024")"""
 
