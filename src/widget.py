@@ -1,5 +1,5 @@
-from masks import get_mask_card_number  # Импорт функции, которая маскирует номер банковской карты
-from masks import get_mask_account  # Импорт функции, которая маскирует номер банковского счета
+from .masks import get_mask_account  # Импорт функции, которая маскирует номер банковского счета
+from .masks import get_mask_card_number  # Импорт функции, которая маскирует номер банковской карты
 
 
 def mask_account_card(account_card: str) -> str:
@@ -13,11 +13,11 @@ def mask_account_card(account_card: str) -> str:
 
     # Присвоение номеру карты последнего элемента списка, полученного из слов входящей строки и
     # преобразование его в числовой формат
-    card_number = int(parts[-1])
+    card_number = parts[-1]
 
     # Присвоение номеру счета последнего элемента списка, полученного из слов входящей строки и
     # преобразование его в числовой формат
-    account_number = int(parts[-1])
+    account_number = parts[-1]
 
     # Проверка на тип карты или счета, получаемые из входящей строки
     # Вывод строки с замаскированным номером
@@ -33,7 +33,7 @@ def mask_account_card(account_card: str) -> str:
         return f"{parts[0]} {masked_number}"
 
 
-def get_date (old_format: str) -> str:
+def get_date(old_format: str) -> str:
     """Функция, которая принимает на вход строку с датой в формате "2024-03-11T02:26:18.671407"
     и возвращает строку с датой в формате "ДД.ММ.ГГГГ" ("11.03.2024")"""
 
