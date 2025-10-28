@@ -1,5 +1,0 @@
-my_function error: unsupported operand type(s) for /: 'int' and 'str' my_function error: division by zero my_function error: division by zero
- my_function error: division by zero \n my_function error: division by zero \ my_function error: division by zero 
-
- my_function error: unsupported operand type(s) for /: 'int' and 'str'
- 
