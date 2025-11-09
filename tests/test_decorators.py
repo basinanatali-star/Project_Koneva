@@ -19,7 +19,6 @@ def test_log():
         my_function(1, 0)
 
 
-
 def test_log(capsys):
     @log()
     def my_function(x, y):
