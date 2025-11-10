@@ -8,7 +8,9 @@ def test_log():
     def my_function(x, y):
         return x + y
 
-    with pytest.raises(TypeError, match="my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, '2'),{}"):
+    with pytest.raises(
+        TypeError, match="my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, '2'),{}"
+    ):
         my_function(1, "2")
 
     @log()

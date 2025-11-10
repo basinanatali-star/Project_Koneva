@@ -4,8 +4,10 @@ import functools
 def log(filename=None):
     """Декоратор, который автоматически логирует начало и конец выполнения функции,
     а также ее результаты или возникшие ошибки."""
+
     def decorator(func):
         """Декоратор, который сохраняет метаданные о функции"""
+
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
             try:

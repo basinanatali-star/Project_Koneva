@@ -13,7 +13,7 @@ def load_transactions(file_path: str) -> List[Dict[str, Any]]:
         return []
 
     # Открытие и чтение файла с удалением пробельных символов
-    with open(file_path, 'r', encoding='utf-8') as f:
+    with open(file_path, "r", encoding="utf-8") as f:
         content = f.read().strip()
 
     # Проверка, что файл пустой
