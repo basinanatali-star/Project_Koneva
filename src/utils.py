@@ -5,7 +5,7 @@ import logging
 from typing import List, Dict, Any
 
 logger = logging.getLogger('masks')
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 
 os.makedirs('logs', exist_ok=True)
 
