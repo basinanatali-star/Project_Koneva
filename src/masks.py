@@ -2,7 +2,7 @@ import logging
 import os
 
 logger = logging.getLogger('masks')
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 
 os.makedirs('logs', exist_ok=True)
 
