@@ -1,5 +1,5 @@
-from .masks import get_mask_account  # Импорт функции, которая маскирует номер банковского счета
-from .masks import get_mask_card_number  # Импорт функции, которая маскирует номер банковской карты
+from src.masks import get_mask_account  # Импорт функции, которая маскирует номер банковского счета
+from src.masks import get_mask_card_number  # Импорт функции, которая маскирует номер банковской карты
 
 
 def mask_account_card(account_card: str) -> str:
@@ -24,13 +24,11 @@ def mask_account_card(account_card: str) -> str:
     # Маскировка номера производится из уже ранее написанных функций из модуля masks
     if card_type == "Счет":
         masked_number = "" + get_mask_account(account_number)
-        return f"{parts[0]} {masked_number}"
-    if card_type == "Visa":
-        masked_number = "" + get_mask_card_number(card_number)
-        return f"{parts[0]} {parts[1]} {masked_number}"
+        return f"{card_type} {masked_number}"
     else:
         masked_number = "" + get_mask_card_number(card_number)
-        return f"{parts[0]} {masked_number}"
+        card_name = " ".join(parts[:-1]) if len(parts) > 2 else card_type
+        return f"{card_name} {masked_number}"
 
 
 def get_date(old_format: str) -> str:
