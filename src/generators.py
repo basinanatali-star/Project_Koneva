@@ -5,7 +5,12 @@ def filter_by_currency(list_transactions: List[Dict], currency_code: str) -> Ite
     """Функция, которая принимает на вход список словарей, представляющих транзакции возвращает итератор,
     который поочередно выдает транзакции, где валюта операции соответствует заданной."""
     for transaction in list_transactions:
-        if transaction["operationAmount"]["currency"]["code"] == currency_code:
+        currency = (
+            transaction.get("currency")
+            or transaction.get("currency_code")
+            or transaction.get("operationAmount", {}).get("currency", {}).get("code")
+        )
+        if currency == currency_code:
             yield transaction
 
 
